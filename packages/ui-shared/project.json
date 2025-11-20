@@ -1,0 +1,26 @@
+{
+  "name": "ui-shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ui-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ui-shared",
+        "main": "packages/ui-shared/src/index.ts",
+        "tsConfig": "packages/ui-shared/tsconfig.lib.json",
+        "assets": ["packages/ui-shared/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/ui-shared/jest.config.ts"
+      }
+    }
+  }
+}

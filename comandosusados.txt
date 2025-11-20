@@ -1,0 +1,13 @@
+--creacion de libreria amgular
+npx nx  g  @nx/angular:library packages/ui-shared-a  --standalone
+
+--creacion de libreria ts
+npx nx  g  @nx/js:lib packages/utils-common  --bundler=tsc --linter=eslint --unitTestRunner=jest
+
+-- graficar las  interconexiones entre  apps
+   npx nx graph
+---video 8
+--agregar nodejs to nx
+npx nx add @nx/node
+--create nodejs  server in nx
+npx nx  g @nx/node:application packages/server
